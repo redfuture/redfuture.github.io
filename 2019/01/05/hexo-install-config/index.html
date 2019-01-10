@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Redfuture&#39;s Blog">
 <meta property="og:description" content="前言在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：  感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费 大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间 我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的  不过如今的网络文章写作已经很不同了，Ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T17:39:58.260Z">
+<meta property="og:updated_time" content="2019-01-10T17:57:04.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo安装，配置">
 <meta name="twitter:description" content="前言在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：  感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费 大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间 我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的  不过如今的网络文章写作已经很不同了，Ma">
@@ -595,8 +595,8 @@
 <li><p>修改站点配置文件：~/hexo/_config.yml</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: git@github.com:username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>运行命令进行部署：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<li><p>安装hexo的git插件：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	$ npm install hexo-deployer-git --save</span><br><span class="line">	```	</span><br><span class="line">7. 运行命令进行部署：</span><br><span class="line">	``` bash</span><br><span class="line">	$ hexo g</span><br><span class="line">	$ hexo d</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>之后就可以在 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> 看到自己的博客了。</p>
 </li>
