@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hexo,skills,github.io,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：  感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费 大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间 我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的  不过如今的网络文章写作已经很不同了，Ma">
+<meta name="keywords" content="hexo,skills,github.io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo安装，配置">
+<meta property="og:url" content="https://redfuture.github.io/2019/01/05/hexo-install-config/index.html">
+<meta property="og:site_name" content="Redfuture&#39;s Blog">
+<meta property="og:description" content="前言在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：  感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费 大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间 我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的  不过如今的网络文章写作已经很不同了，Ma">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-10T17:39:58.260Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo安装，配置">
+<meta name="twitter:description" content="前言在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：  感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费 大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间 我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的  不过如今的网络文章写作已经很不同了，Ma">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://redfuture.github.io/2019/01/05/hexo-install-config/">
+
+
+
+
+
+  <title>Hexo安装，配置 | Redfuture's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Redfuture's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Recording My Life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://redfuture.github.io/2019/01/05/hexo-install-config/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Xiaowei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Redfuture's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo安装，配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T00:21:54+08:00">
+                2019-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件使用/" itemprop="url" rel="index">
+                    <span itemprop="name">软件使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在网络上游荡20几年，没有一个稳定的博客空间，很多自己的总结/随笔都是以文本文件的形式存储在本地，主要因为下面几个原因：</p>
+<ul>
+<li>感觉大部分的博客空间都随时有消失的可能，免费空间大都有各种限制，没有安全感，不想自己多年的心血白费</li>
+<li>大部分博客中的内容的富文本格式不可移植，不能很方便的同步在多个空间</li>
+<li>我懒，本地存储虽然low但是使用、搜索、编辑起来还是很方便的</li>
+</ul>
+<p>不过如今的网络文章写作已经很不同了，Markdown的流行甚至成了一种标准，主流的博客平台基本都开始支持Markdown格式，这让一次写作多处发布成为了可能，而且Markdown格式的文本在本地也很容易存储、编辑、解析后更已读、能够方便的导出为html,pdf等多种格式分享。很大程度上减轻了维护一个甚至多个博客空间的工作量。</p>
+<a id="more"></a>
+<p>支持Markdown写作的博客有多种选择，比如</p>
+<ul>
+<li>在线的：简书，github，博客园，SegmentFault，开源中国，图灵社区等</li>
+<li>blog建站系统：hexo，jekyII，wordpress，Ghost，gitblog，CMD Markdown，startblog等</li>
+</ul>
+<p>我自己目前的需求是以本地为中心，能够方便的生成静态页面或直接上传Markdown文档后进行多位置的部署，又不想受各博客空间的模板限制，又想稳定方便，所以，自己搭搭建可以说是个很好的选择。在这里，我将介绍我当前博客的搭建方法：使用自己的虚拟主机+Github Page同步发布，基于Hexo框架，采用nexT模板。下面就把自己搭建，配置过程和使用方法进行一个记录。</p>
+<p>我自己的博客环境的需求：</p>
+<ol>
+<li>能在多台电脑随时写作更新，能在本地查看格式化后内容，能根据内容搜索。</li>
+<li>博客空间位于两个位置：自己的虚拟主机和github.io ，可以同步更新。</li>
+<li>对于文章可以有选择地复制到其它在线空间。</li>
+</ol>
+<h1 id="Hexo安装配置"><a href="#Hexo安装配置" class="headerlink" title="Hexo安装配置"></a>Hexo安装配置</h1><h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Hexo基于Node.js，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub上，是搭建博客的首选框架。</p>
+<p>最好的介绍还是上官网链接：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我的安装环境是一个刚刚在本地重装好的centos7虚拟机，首先我会用这台主机作为初始空间配置的生成，并运行独立的http服务器。</p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>Hexo, node.js, Hexo主题，后续空间的发布，配置及文章的同步都需要git作为工具。</p>
+<ul>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></li>
+<li>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code></li>
+<li>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>.</li>
+<li>Mac：使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>：<code>brew install git</code> ;或下载<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a>安装。</li>
+</ul>
+<div class="note warning Windows 用户"><p>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">这个页面</a>，收录了存储于百度云的下载地址。</p></div>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>安装 Node.js 的最佳方式是使用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。</p>
+<p>cURL:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>Wget:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>安装完成后，<strong>重启终端</strong>并执行下列命令即可安装Node.js：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+<p>或者您也可以下载<a href="http://nodejs.org/" target="_blank" rel="noopener">安装程序</a>来安装。</p>
+<div class="note info Windows 用户"><p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。<br>另外，您也可以使用Git Bash，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p></div>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>以上Hexo最基本的组件已经全部安装完成，后续可能还会需要其它的依赖组件，在配置过程中用到时再随时安装。</p>
+<h3 id="创建一个Hexo运行目录"><a href="#创建一个Hexo运行目录" class="headerlink" title="创建一个Hexo运行目录"></a>创建一个Hexo运行目录</h3><p>Hexo系统需要一个目录用来初始化生成博客空间所需要的全部文件，我选择在自己home目录下的hexo文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/hexo</span><br></pre></td></tr></table></figure>
+<h3 id="初始化运行目录"><a href="#初始化运行目录" class="headerlink" title="初始化运行目录"></a>初始化运行目录</h3><p>请执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init ~/hexo</span><br><span class="line">$ <span class="built_in">cd</span> ~/hexo</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>新建完成后，文件夹hexo内的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>其中各文件和目录的作用：</p>
+<p>_config.yml<br>:    网站的 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数。</p>
+<p>package.json<br>:    应用程序的信息。一般无需更改。</p>
+<p>scaffolds<br>:    <a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模版</a> 文件夹。当新建文章时，Hexo 会根据scaffold来建立文件。<br>Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<p>source<br>:    资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<p>themes<br>:    <a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<p>执行完初始化，就可以预览一下hexo的初始样貌了，可以在~/hexo目录下执行如下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>执行完毕后可以通过浏览器访问<a href="http://server-ip:4000/来访问" target="_blank" rel="noopener">http://server-ip:4000/来访问</a></p>
+<h3 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h3><h4 id="安装nexT主题"><a href="#安装nexT主题" class="headerlink" title="安装nexT主题"></a>安装nexT主题</h4><p>我个人很喜欢hexo的NexT主题，所以配置过程中一起安装这个主题。NexT主题是托管在github上的，其主页地址：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a></p>
+<p>安装方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/hexo</span><br><span class="line">mkdir -p themes/next</span><br><span class="line">curl -s https://api.github.com/repos/iissnan/hexo-theme-next/releases/latest | grep tarball_url | cut -d <span class="string">'"'</span> -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1</span><br></pre></td></tr></table></figure>
+<h4 id="修改hexo站点基本配置-hexo-config-yml"><a href="#修改hexo站点基本配置-hexo-config-yml" class="headerlink" title="修改hexo站点基本配置~/hexo/_config.yml"></a>修改hexo站点基本配置~/hexo/_config.yml</h4><p>可以在 _config.yml 中修改大部分的配置。以下是我修改的内容：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述。主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>您的名字，用于显示文章的作者。</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言，简体中文应设置为zh-Hans，支持的语言列表可参看所用主题的目录：themes/next/languages/</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo默认使用您电脑的时区。为增加移植性设定为北京时间：Asia/Shanghai ，参考<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>。</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>网址，填http://自己网站域名</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>网站根目录，本blog在网站中的目录</td>
+</tr>
+<tr>
+<td><code>theme</code></td>
+<td>当前主题名称，即themes目录下主题目录的名称。我安装了NexT主题，这里设置为 <code>next</code></td>
+</tr>
+<tr>
+<td><code>deploy</code></td>
+<td>部署部分的设置，将在下面章节详述</td>
+</tr>
+</tbody>
+</table>
+<div class="note info 网站存放在子目录"><p>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p></div>
+<p>下列参数是可能会用到的，我目前保留了默认值：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>permalink</code></td>
+<td>文章的 <a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">永久链接</a> 格式</td>
+<td><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>permalink_defaults</code></td>
+<td>永久链接中各部分的默认值</td>
+<td></td>
+</tr>
+<tr>
+<td><code>default_category</code></td>
+<td>默认分类</td>
+<td><code>uncategorized</code></td>
+</tr>
+<tr>
+<td><code>date_format</code></td>
+<td>日期格式 Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</td>
+<td><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>time_format</code></td>
+<td>时间格式</td>
+<td><code>H:mm:ss</code></td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>每页显示的文章量 (0 = 关闭分页功能)</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pagination_dir</code></td>
+<td>分页目录</td>
+<td><code>page</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="修改NexT主题配置-hexo-themes-next-config-yml"><a href="#修改NexT主题配置-hexo-themes-next-config-yml" class="headerlink" title="修改NexT主题配置~/hexo/themes/next/_config.yml"></a>修改NexT主题配置~/hexo/themes/next/_config.yml</h4><p>关于NexT主题的全部详细配置方法见官网：<a href="https://theme-next.iissnan.com" target="_blank" rel="noopener">https://theme-next.iissnan.com</a></p>
+<p>我自己对NexT主题配置文件的修改如下：</p>
+<h5 id="显示在菜单导航栏中的项目"><a href="#显示在菜单导航栏中的项目" class="headerlink" title="显示在菜单导航栏中的项目"></a>显示在菜单导航栏中的项目</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  sitemap: /sitemap.xml || sitemap</span><br></pre></td></tr></table></figure>
+<p>categories和tags页面将在后面使用hexo命令创建</p>
+<h5 id="主题显示布局，默认为Muse，更改为更简洁的Mist"><a href="#主题显示布局，默认为Muse，更改为更简洁的Mist" class="headerlink" title="主题显示布局，默认为Muse，更改为更简洁的Mist"></a>主题显示布局，默认为Muse，更改为更简洁的Mist</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+<h5 id="修改社交媒体及联系方式"><a href="#修改社交媒体及联系方式" class="headerlink" title="修改社交媒体及联系方式"></a>修改社交媒体及联系方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/redfuture || github</span><br><span class="line">  E-Mail: mailto:redfuture@hotmail.com || envelope</span><br></pre></td></tr></table></figure>
+<p>其中第一部分为显示的文字名称，第二部分为链接，第三部分为显示的图标对应的fontawesome icons的名称</p>
+<h5 id="添加站点建立时间"><a href="#添加站点建立时间" class="headerlink" title="添加站点建立时间"></a>添加站点建立时间</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  since: 2019</span><br></pre></td></tr></table></figure>
+<h5 id="添加背景动画"><a href="#添加背景动画" class="headerlink" title="添加背景动画"></a>添加背景动画</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
+<h5 id="使用night风格的代码高亮显示"><a href="#使用night风格的代码高亮显示" class="headerlink" title="使用night风格的代码高亮显示"></a>使用night风格的代码高亮显示</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">highlight_theme: night</span><br></pre></td></tr></table></figure>
+<p>至此hexo站点与next主题基本配置完毕。接下来使用hexo命令创建categories和tags页面，并新建一个新的文章。</p>
+<h3 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h3><p>我希望在站点首页的导航菜单栏里添加两个链接：</p>
+<ul>
+<li>分类：显示所有文章分类的页面，点击分类后显示这个分类下的所有文章</li>
+<li>标签：所有文章使用过的标签页面，点击相应标签可以查看所有有此标签的文章</li>
+</ul>
+<h4 id="创建categories和tags页面"><a href="#创建categories和tags页面" class="headerlink" title="创建categories和tags页面"></a>创建categories和tags页面</h4><p>hexo中创建页面的方式是相同的，使用以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br><span class="line">$ hexo new page tags</span><br><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure></p>
+<p>我同时还创建了一个关于页面，可以添加个人的简历，这个些可以和NexT主题配置文件中menu下面的子项相对应。<br>命令执行后的结果就是在<code>~/hexo/source/</code>目录下分别生成了三个目录：categories，tags，about。每个目录中都有一个index.md。</p>
+<h4 id="修改post模板"><a href="#修改post模板" class="headerlink" title="修改post模板"></a>修改post模板</h4><p>我们有了categories页面及tags页面，希望在以后发布的每篇博客都指定一个分类（Hexo仅支持一篇文章属于一个分类，不能属于多个分类），并设置多个标签。那么可以修改scaffolds/post.md文件，这个文件中的内容在以后每次用命令行创建新文章时会自动复制到新文章的md文件中。<br>将其内容修改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">- default</span><br><span class="line">tags:</span><br><span class="line">- default1</span><br><span class="line">- default2</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="发布新文章"><a href="#发布新文章" class="headerlink" title="发布新文章"></a>发布新文章</h4><p>现在所有都已经准备就绪，可以发布自己的第一篇文章了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">"title"</span></span><br></pre></td></tr></table></figure></p>
+<p>命令执行后创建~/hexo/source/_post/title.md ,随后就可以使用熟悉的编辑器编辑title.md了</p>
+<p>或者可以先创建一个草稿：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft <span class="string">"title"</span></span><br></pre></td></tr></table></figure></p>
+<p>会生成~/hexo/source/_post/title.md，编辑完成后执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish post <span class="string">"title"</span></span><br></pre></td></tr></table></figure></p>
+<p>会将文件移动到~/hexo/source/_post/title.md</p>
+<h4 id="生成静态页面并部署"><a href="#生成静态页面并部署" class="headerlink" title="生成静态页面并部署"></a>生成静态页面并部署</h4><p>文章写作完成后可以执行如下命令生成静态页面：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate (hexo g) 由当前目录下的配置和文章生成新的博客静态页面</span><br><span class="line">$ hexo server (hexo s) 启动本地http server服务，默认在4000端口</span><br><span class="line">$ hexo deploy (hexo d) 提交到远程仓库</span><br><span class="line">$ hexo new page <span class="string">"xx"</span>(hexo n page) 创建页面 </span><br><span class="line">$ hexo new <span class="string">"xx"</span> (hexo n <span class="string">""</span>) 创建文章</span><br><span class="line">$ hexo d -g 生成静态并提交到远程仓库</span><br><span class="line">$ hexo s -g 生成静态文件并启动本地预览</span><br><span class="line">$ hexo clean 如果修改了配置文件，建议先执行这个步骤，将public下的文件全部清除，重新生成</span><br></pre></td></tr></table></figure></p>
+<p>之后就可以在<a href="http://localhost:4000/看到刚才发布的文章了。至此hexo基础环境已经搭建完成。" target="_blank" rel="noopener">http://localhost:4000/看到刚才发布的文章了。至此hexo基础环境已经搭建完成。</a></p>
+<h4 id="将静态页面部署到github-io"><a href="#将静态页面部署到github-io" class="headerlink" title="将静态页面部署到github.io"></a>将静态页面部署到github.io</h4><p>github为每个用户提供了一个无限容量的静态页面空间：your-github-username.github.io</p>
+<p>hexo也提供了方便的将自己的博客部署到github.io的功能：</p>
+<ol>
+<li>登录自己github，确认已经存在username.github.io代码库，没有的话创建一个（必须以.github.io做后缀）。</li>
+<li><p>生成一对RSA key, 命令如下：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ssh-keygen -t rsa -b 4096 -C <span class="string">"自己的标识"</span></span><br></pre></td></tr></table></figure>
+<p> 一路回车，会在~/.ssh/目录下生成两个文件：id_rsa和id_rsa.pub ，id_rsa自己保留好这是私钥。</p>
+</li>
+<li>将上面生成的id_rsa.pub配置到github账户，以便可以免密从自己的代码库check in/out代码。具体参见github帮助文档：<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="noopener">Adding a new SSH key to your GitHub account</a></li>
+<li><p>验证是否添加key成功：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改站点配置文件：~/hexo/_config.yml</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: git@github.com:username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行命令进行部署：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后就可以在 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> 看到自己的博客了。</p>
+</li>
+</ol>
+<h1 id="写作环境"><a href="#写作环境" class="headerlink" title="写作环境"></a>写作环境</h1><p>博客基本成形了，同时发布在了github.io。但是有一个问题，如何能方便的在任意电脑上都能随时随地的码字更新，修改配置呢？</p>
+<h2 id="建立个性化内容的代码库"><a href="#建立个性化内容的代码库" class="headerlink" title="建立个性化内容的代码库"></a>建立个性化内容的代码库</h2><p>分析Hexo的文档结构后发现会被我们使用的配置文件和存储文章md文件的目录其实很集中，那么我们可以把这些可能被改变的文件提取出来，单独存放在一个github的代码库，这样每当需要修改配置，或添加新文章时就可以先去代码库checkout，修改，然后checkin了。只要电脑有git客户端和一个markdown编辑器就够了。</p>
+<ol>
+<li>在github建立一个新代码库，假设名称为：myblog_site</li>
+<li><p>将本地hexo运行目录中需要保存到github的易变内容提取出来：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/myblog_site</span><br><span class="line">$ mkdir -p ~/myblog_site/themes/next</span><br><span class="line">$ <span class="built_in">cd</span> ~/hexo/</span><br><span class="line">$ cp -a _config.yml scaffolds <span class="built_in">source</span> ~/myblog_site/	<span class="comment">#拷贝站点配置，模板，文章目录至代码库目录</span></span><br><span class="line">$ cp themes/next/_config.yml ~/myblog_site/themes/next/ <span class="comment">#拷贝NexT主题配置文件至代码库相同路径下</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将~/myblog_site/ 初始化为git目录，并于新建立的代码库myblog_site关联，checkin</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/myblog_site</span><br><span class="line">$ git init</span><br><span class="line">$ git add *</span><br><span class="line">$ git commit -a -m <span class="string">"init blog raw data."</span></span><br><span class="line">$ git remote add origin git@github.com:username/myblog_site.git</span><br><span class="line">$ git push -u origin master <span class="comment">#将本地代码推送到远程代码库</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>至此博客的数据代码库建立完成。</p>
+<h2 id="在虚拟主机上建立相同的站点"><a href="#在虚拟主机上建立相同的站点" class="headerlink" title="在虚拟主机上建立相同的站点"></a>在虚拟主机上建立相同的站点</h2><ol>
+<li>登录虚拟主机，按照上面的步骤完成安装，假设仍然将hexo工作目录放在~/hexo/。</li>
+<li><p>checkout博客的配置和文章数据：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span></span><br><span class="line">$ scp id_rsa.pub ~/.ssh/  <span class="comment">#将上面生成的私钥放置在虚拟主机服务器上</span></span><br><span class="line">$ git <span class="built_in">clone</span> git@github.com:username/myblog_site.git  <span class="comment">#将配置/文章代码库克隆到本地</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/hexo/ <span class="comment">#进入安装初始化好的博客工作目录</span></span><br><span class="line">$ rm -rf _config.yml scaffolds <span class="built_in">source</span> themes/next/_config.yml</span><br><span class="line">$ ln -s ~/myblog_site/_config.yml  <span class="comment"># 如下分别将文件链接到代码库中的相同文件/目录</span></span><br><span class="line">$ ln -s ~/myblog_site/scaffolds</span><br><span class="line">$ ln -s ~/myblog_site/<span class="built_in">source</span></span><br><span class="line">$ <span class="built_in">cd</span> themes/next/</span><br><span class="line">$ ln -s ~/myblog_site/themes/next/_config.yml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在虚拟主机上执行静态页面生成与部署：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br><span class="line">$ hexo s &amp;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="后续写作过程"><a href="#后续写作过程" class="headerlink" title="后续写作过程"></a>后续写作过程</h2><ol>
+<li>在一台新的工作电脑上（已安装git），将myblog_site克隆到本地目录。</li>
+<li>使用任意markdown编辑器，编辑/添加文章到相应目录，或修改配置文件。</li>
+<li><p>发布时先checkin到github: </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -a -m <span class="string">"comments"</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登录到自己的虚拟主机执行myblog_site的checkout，然后执行静态页面的生成与部署到github.io，同时主机上启动服务。</p>
+</li>
+</ol>
+<h2 id="关于markdown编辑器"><a href="#关于markdown编辑器" class="headerlink" title="关于markdown编辑器"></a>关于markdown编辑器</h2><p>目前有多种编辑器可供使用,比如markdownpad, 在线的简书编辑器等，我自己更喜欢一些开源，免费，简单可移植的工具。工作中一直在用notepad++这个工具觉得很不错。notepad++也有第三方的plugin可以进行简单的markdown解析预览，虽然效果不是特别好，但是对于日常的文章写作足够用。</p>
+<ul>
+<li><a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener">notepad++</a></li>
+<li>notepad++ markdown预览插件：<a href="https://github.com/nea/MarkdownViewerPlusPlus" target="_blank" rel="noopener">MarkdownViewerPlusPlus</a></li>
+<li>notepad++ markdown语法高亮插件：<a href="https://github.com/Edditoria/markdown-plus-plus" target="_blank" rel="noopener">Markdown Syntax Highlighting for Notepad++</a></li>
+</ul>
+<p>以上所有部件均为纯绿色版本，存进自己的U盘，随身携带，即插即用。</p>
+<h1 id="完善博客功能"><a href="#完善博客功能" class="headerlink" title="完善博客功能"></a>完善博客功能</h1><h2 id="添加搜索"><a href="#添加搜索" class="headerlink" title="添加搜索"></a>添加搜索</h2><h2 id="添加站点地图"><a href="#添加站点地图" class="headerlink" title="添加站点地图"></a>添加站点地图</h2><h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><h2 id="添加fork-me-on-github"><a href="#添加fork-me-on-github" class="headerlink" title="添加fork me on github"></a>添加fork me on github</h2><h2 id="添加公益404页面"><a href="#添加公益404页面" class="headerlink" title="添加公益404页面"></a>添加公益404页面</h2><h2 id="设置阅读全文方式"><a href="#设置阅读全文方式" class="headerlink" title="设置阅读全文方式"></a>设置阅读全文方式</h2><h2 id="优化SEO"><a href="#优化SEO" class="headerlink" title="优化SEO"></a>优化SEO</h2><h2 id="设置侧栏头像"><a href="#设置侧栏头像" class="headerlink" title="设置侧栏头像"></a>设置侧栏头像</h2><h2 id="文章中使用图片"><a href="#文章中使用图片" class="headerlink" title="文章中使用图片"></a>文章中使用图片</h2><h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><h2 id="添加访问量统计"><a href="#添加访问量统计" class="headerlink" title="添加访问量统计"></a>添加访问量统计</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/skills/" rel="tag"># skills</a>
+          
+            <a href="/tags/github-io/" rel="tag"># github.io</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hu Xiaowei</p>
+              <p class="site-description motion-element" itemprop="description">Linux Kernel Python Bash Photo</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/redfuture" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:redfuture@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/redfuture" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo安装配置"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Hexo？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是Hexo？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.2.3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个Hexo运行目录"><span class="nav-number">2.3.1.</span> <span class="nav-text">创建一个Hexo运行目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化运行目录"><span class="nav-number">2.3.2.</span> <span class="nav-text">初始化运行目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置hexo"><span class="nav-number">2.3.3.</span> <span class="nav-text">配置hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装nexT主题"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">安装nexT主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改hexo站点基本配置-hexo-config-yml"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">修改hexo站点基本配置~/hexo/_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改NexT主题配置-hexo-themes-next-config-yml"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">修改NexT主题配置~/hexo/themes/next/_config.yml</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#显示在菜单导航栏中的项目"><span class="nav-number">2.3.3.3.1.</span> <span class="nav-text">显示在菜单导航栏中的项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题显示布局，默认为Muse，更改为更简洁的Mist"><span class="nav-number">2.3.3.3.2.</span> <span class="nav-text">主题显示布局，默认为Muse，更改为更简洁的Mist</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改社交媒体及联系方式"><span class="nav-number">2.3.3.3.3.</span> <span class="nav-text">修改社交媒体及联系方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加站点建立时间"><span class="nav-number">2.3.3.3.4.</span> <span class="nav-text">添加站点建立时间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加背景动画"><span class="nav-number">2.3.3.3.5.</span> <span class="nav-text">添加背景动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用night风格的代码高亮显示"><span class="nav-number">2.3.3.3.6.</span> <span class="nav-text">使用night风格的代码高亮显示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo"><span class="nav-number">2.3.4.</span> <span class="nav-text">使用hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建categories和tags页面"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">创建categories和tags页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改post模板"><span class="nav-number">2.3.4.2.</span> <span class="nav-text">修改post模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布新文章"><span class="nav-number">2.3.4.3.</span> <span class="nav-text">发布新文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态页面并部署"><span class="nav-number">2.3.4.4.</span> <span class="nav-text">生成静态页面并部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将静态页面部署到github-io"><span class="nav-number">2.3.4.5.</span> <span class="nav-text">将静态页面部署到github.io</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作环境"><span class="nav-number">3.</span> <span class="nav-text">写作环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立个性化内容的代码库"><span class="nav-number">3.1.</span> <span class="nav-text">建立个性化内容的代码库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在虚拟主机上建立相同的站点"><span class="nav-number">3.2.</span> <span class="nav-text">在虚拟主机上建立相同的站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续写作过程"><span class="nav-number">3.3.</span> <span class="nav-text">后续写作过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于markdown编辑器"><span class="nav-number">3.4.</span> <span class="nav-text">关于markdown编辑器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完善博客功能"><span class="nav-number">4.</span> <span class="nav-text">完善博客功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索"><span class="nav-number">4.1.</span> <span class="nav-text">添加搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加站点地图"><span class="nav-number">4.2.</span> <span class="nav-text">添加站点地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加RSS"><span class="nav-number">4.3.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加fork-me-on-github"><span class="nav-number">4.4.</span> <span class="nav-text">添加fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加公益404页面"><span class="nav-number">4.5.</span> <span class="nav-text">添加公益404页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置阅读全文方式"><span class="nav-number">4.6.</span> <span class="nav-text">设置阅读全文方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化SEO"><span class="nav-number">4.7.</span> <span class="nav-text">优化SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置侧栏头像"><span class="nav-number">4.8.</span> <span class="nav-text">设置侧栏头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章中使用图片"><span class="nav-number">4.9.</span> <span class="nav-text">文章中使用图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加评论功能"><span class="nav-number">4.10.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加访问量统计"><span class="nav-number">4.11.</span> <span class="nav-text">添加访问量统计</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hu Xiaowei</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
