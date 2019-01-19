@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/ 
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://redfuture.github.io/sitemap.xml
+Sitemap: http://redfuture.github.io/baidusitemap.xml
+Sitemap: http://www.redfuture.club/sitemap.xml
+Sitemap: http://www.redfuture.club/baidusitemap.xml
